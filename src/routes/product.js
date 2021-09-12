@@ -11,7 +11,7 @@ routing.get("/id", ctrl.getAll)
 routing.get("/produk_harga", ctrl.productPrice)
 routing.post("/", validate("seller"),uploads.single("produk_foto"), ctrl.Save)
 routing.put("/update/:produk_id", validate("seller"),uploads.single("produk_foto"), ctrl.updateData)
-routing.delete("/rem/:produk_id", validate("seller"),ctrl.removeData)
+routing.delete("/rem/:produk_id",validate("seller"), ctrl.removeData)
 
 
 module.exports = routing

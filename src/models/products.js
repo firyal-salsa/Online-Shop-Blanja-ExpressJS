@@ -1,7 +1,6 @@
 const {orm} = require("../configs/db")
 const {DataTypes} = require("sequelize")
 const categories = require("./categories")
-const sellers = require("./sellers")
 
 class Products {
     constructor() {
@@ -40,22 +39,10 @@ class Products {
                     key: "kategori_id",
                 },
             },
-            produk_seller: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                references: {
-                    model: "sellers",
-                    key: "email",
-                },
-            },
         })
         this.table.belongsTo(categories.table,{
             foreignKey: "produk_kategori_id",
             as: "categories",
-        }),
-        this.table.belongsTo(sellers.table,{
-            foreignKey: "produk_seller",
-            as: "sellers",
         })
     }
 
@@ -65,7 +52,7 @@ class Products {
             .then(res => {
                 resolve(res.toJSON())
             }).catch((err)=>{
-                reject('gagal memasukan data')
+                reject(err)
             })
         })
     }
@@ -74,7 +61,7 @@ class Products {
         return new Promise((resolve, reject)=>{
             this.table
             .findAll({
-                include: [{ model: categories.table, as: "categories" },{ model: sellers.table, as: "sellers" }],
+                include: [{ model: categories.table, as: "categories" }],
                 order: [['updatedAt', 'DESC']],
             }).then(res => {
                 resolve(res)

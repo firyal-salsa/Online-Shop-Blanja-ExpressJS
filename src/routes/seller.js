@@ -5,7 +5,7 @@ const validate = require("../middleware/validate")
 const uploads = require("../middleware/upload")
 
 routing.get("/", ctrl.getAll)
-routing.post("/",validate("seller"),uploads.single("foto"), ctrl.Save)
+routing.post("/",uploads.single("foto"), ctrl.Save)
 routing.put("/reset/:email",validate("seller"), ctrl.resetPassword)
 routing.put("/manage/:email",validate("seller"), uploads.single("foto"), ctrl.manageProfile)
 routing.get("/inventory", validate("seller"),ctrl.getAllInventory)

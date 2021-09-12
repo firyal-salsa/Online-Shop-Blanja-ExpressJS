@@ -8,7 +8,7 @@ const PORT = 9000
 async function init() {
     try {
         await database.authenticate()
-        await database.sync({ force: true})
+        await database.sync({ alter: true})
         await redis.check()
         server.listen(PORT, () => {
             Logger.info(`Connection to db`)

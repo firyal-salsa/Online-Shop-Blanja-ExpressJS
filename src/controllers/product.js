@@ -2,13 +2,10 @@ const products = {}
 const model = require("../models/products")
 const respone = require("../helper/respone")
 const uploads = require("../helper/uploadCloud")
-const { redisDb } = require("../configs/redis")
 const Logger = require("../helper/logger")
-const validate = require("../middleware/validate")
 
 products.getAll = async (req, res) => {
     try {
-        console.log(validate.checkToken(role))
         const result = await model.getAll()
            respone(res, 200, result)
            return Logger.http('get all data product success')
@@ -34,11 +31,12 @@ products.Save = async (req, res) => {
         }
 
         const result = await model.Save(data)
-        redisDb.del("product")
+        //redisDb.del("product")
            respone(res, 200, result)
            return Logger.http('add product data success')
     } catch (error) {
         res.send(error)
+        console.log(error)
         return Logger.error(error)
     }
 }

@@ -22,6 +22,8 @@ seller.Save = async (req, res) => {
         let urlImage = ""
         if (req.file !== undefined) {
             urlImage = await uploads(req.file.path)
+        }else{
+            urlImage = 'img not found'
         }
         const passHash = await passwordHash(req.body.password)
         const data = {
