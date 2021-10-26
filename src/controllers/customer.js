@@ -24,7 +24,7 @@ customer.SaveCS = async (req, res) => {
         if (req.file !== undefined) {
             urlImage = await uploads(req.file.path)
         }else{
-            urlImage = 'img not found'
+            urlImage = "https://res.cloudinary.com/dvehyvk3d/image/upload/v1635189155/user_em8uvb.png"
         }
         const data = {
             name : req.body.name, 
