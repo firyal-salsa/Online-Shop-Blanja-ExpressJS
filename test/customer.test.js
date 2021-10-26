@@ -7,10 +7,34 @@ const standardRespone = {
     result: expect.any(Array)
 }
 
+let token;
 
-describe("service /customers", () => {
+    beforeAll((done) => {
+      request(app)
+        .post('/customer')
+        .send({
+          name: 'iyal',
+          password: 'abc123',
+        })
+        .end((err, response) => {
+          token = response.body.token; // save the token!
+          done();
+        });
+    });
 
-    describe("GET /customers", () => {
+    const customer = {
+                    email: "f@mail.com",
+                    name: "test",
+                    phone_number: 62811,
+                    gender: "laki-laki",
+                    birthday: "01-01-1990",
+                    password: "123qwerty",
+                    foto: ""
+                };
+
+describe("service /customer", () => {
+
+    describe("GET /customer", () => {
 
         test("harus mengembalikan statuscode 200", async () => {
             const respone = await request(app).get("/customer")
@@ -23,52 +47,34 @@ describe("service /customers", () => {
         })
     })
 
-    // describe("POST /customers", () => {
-    //     test("harus mengembalikan statuscode 201", async () => {
-    //         const respone = await request(app).post("/customer").send({
-    //             name: "iyal",
-    //             email: "iyal@mail.com",
-    //             password: 1234
-    //         })
-    //         expect(respone.statusCode).toBe(201)
-    //     })
+    describe("POST /customers", () => {
 
+        test('harus mengembalikan status 200', async() => {
+            try {
+                const respone = await request(app).set('Authorization', `Token ${token}`).post('/customer').send(customer)
+                expect(respone.statusCode).toBe(200)
+            } catch (err) {
+                console.log(`Error ${err}`)
+            }
+        }); 
 
-    // })
-
-    describe("PUT /customers", () => {
-        test("harus mengembalikan statuscode 201", async () => {
-            const respone = await request(app).put("/customer/reset/iyal@mail.com").send({
-                password: "1234",
-            })
-            expect(respone.statusCode).toBe(201)
+        test("harus mengembalikan json sebagai tipe konten di header http", async () => {
+            const respone = await request(app).post("/customer").send(customer)
+            expect(respone.headers['content-type']).toEqual(expect.stringContaining('json'))
         })
     })
 
-    describe("GET /customers/", () => {
-
-        test("harus mengembalikan statuscode 200", async () => {
-            const respone = await request(app).get("/customer/address")
-            expect(respone.statusCode).toBe(200)
-        })
+    describe("PUT /customer", () => {
+        test('harus mengembalikan status 200', async() => {
+            const customerUpdate = { password: "12345"}
+            try {
+                const respone = await request(app).set('Authorization', `Token ${token}`).put('/customer/update/1').send(customerUpdate)
+                expect(respone.statusCode).toBe(200)
+            } catch (err) {
+                console.log(`Error ${err}`)
+            }
+        }); 
     })
-
-    // describe("POST /customers", () => {
-    //     test("harus mengembalikan statuscode 200", async () => {
-    //         const respone = await request(app).post("/customer/address").send({
-    //             address_tempat: "rumah",
-    //             address_nama: "mamah",
-    //             address_telepon: 62555,
-    //             address_alamat: "kp. babakan kamulyan",
-    //             address_kodepos: 40553,
-    //             address_kota: "bandung",
-    //             address_email: "test@mail.com"
-    //         })
-    //         expect(respone.statusCode).toBe(200)
-    //     })
-
-
-    // })
 
 
 })

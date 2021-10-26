@@ -24,7 +24,7 @@ class Products {
                 allowNull: false,
             },
             produk_terjual: {
-                type: DataTypes.INTEGER(13),
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             produk_foto: {

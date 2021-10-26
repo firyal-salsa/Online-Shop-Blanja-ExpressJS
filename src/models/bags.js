@@ -12,8 +12,8 @@ class Bags {
                 primaryKey: true,
             },
             bag_jumlah: {
-                type: DataTypes.INTEGER(3),
-                allowNull: false,
+                type: DataTypes.INTEGER,
+                allowNull: true,
             },
             bag_produk_id: {
                 type: DataTypes.INTEGER,
@@ -36,7 +36,7 @@ class Bags {
             .then(res => {
                 resolve(res.toJSON())
             }).catch((err)=>{
-                reject('gagal memasukan data')
+                reject(err)
             })
         })
     }
@@ -52,7 +52,7 @@ class Bags {
             })
             .catch((err)=>{
                 console.log(err)
-                reject('gagal menampilkan data')
+                reject(err)
             })
         })
     }

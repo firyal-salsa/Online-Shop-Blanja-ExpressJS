@@ -14,7 +14,7 @@ class Seller{
                 allowNull: false,
             },
             phone_number: {
-                type: DataTypes.INTEGER(14),
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             store_name: {
@@ -79,7 +79,7 @@ class Seller{
                 resolve(`Berhasil mengubah data`)
             }).catch((err)=>{
                 console.log(err)
-                reject('gagal mengubah data')
+                reject(err)
             })
         })
     }

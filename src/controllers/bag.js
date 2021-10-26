@@ -22,7 +22,7 @@ bags.Save = async (req, res) => {
         }
         const result = await model.Save(data)
         respone(res, 201, result)
-        return Logger.http('add bag data success')
+        return Logger.http(result)
     } catch (error) {
         respone(res, 500, error)
         return Logger.error(error)

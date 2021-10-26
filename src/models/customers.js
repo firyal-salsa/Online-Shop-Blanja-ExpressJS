@@ -14,7 +14,7 @@ class Customers{
                 allowNull: false,
             },
             phone_number: {
-                type: DataTypes.INTEGER(14),
+                type: DataTypes.INTEGER,
                 allowNull: true,
             },
             gender: {

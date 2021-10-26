@@ -20,7 +20,7 @@ class Address {
                 allowNull: false,
             },
             address_telepon: {
-                type: DataTypes.INTEGER(255),
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
             address_alamat: {
@@ -56,7 +56,7 @@ class Address {
             .then(res => {
                 resolve(res.toJSON())
             }).catch((err)=>{
-                reject('salah memasukan data')
+                console.log(err)
             })
         })
     }
