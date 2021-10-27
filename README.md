@@ -16,6 +16,7 @@
 <img src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1634225445/tech%20stack/aws-ec2_xkv0gc.svg" width="50px" height="50px">
 <img src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1634225443/tech%20stack/docker-icon_hamwmv.svg" width="50px" height="50px">
 <img src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1634225440/tech%20stack/jenkins_xhlzk0.svg" width="50px" height="50px">
+<img src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1635367893/tech%20stack/kubernetes_qyuz5v.svg" width="50px" height="50px">
 </div>
 
 ## Features
