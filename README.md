@@ -1,5 +1,3 @@
-<h2 align="center">Backend Blanja</h2>
-
 <p align="center"><img src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1634232141/Blanja/Blanja_gtchsp.png" width="200px" alt="Arkademylogo.svg" /></p>
 <p align="center"><img src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1634282728/arkademy_ufgxux.png" width="200px" alt="Arkademylogo.svg" /></p>
 
