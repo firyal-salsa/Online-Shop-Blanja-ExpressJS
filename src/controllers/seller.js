@@ -19,7 +19,6 @@ seller.getAll = async (req, res) => {
 
 seller.Save = async (req, res) => {
     try {
-        const passHash = await passwordHash(req.body.password)
         let urlImage = ""
         if (req.file !== undefined) {
             urlImage = await uploads(req.file.path)
