@@ -19,11 +19,12 @@ seller.getAll = async (req, res) => {
 
 seller.Save = async (req, res) => {
     try {
+        const passHash = await passwordHash(req.body.password)
         let urlImage = ""
         if (req.file !== undefined) {
             urlImage = await uploads(req.file.path)
         }else{
-            urlImage = 'img not found'
+            urlImage = "https://res.cloudinary.com/dvehyvk3d/image/upload/v1635189155/user_em8uvb.png"
         }
         const passHash = await passwordHash(req.body.password)
         const data = {
