@@ -10,10 +10,6 @@ server.use(morgan("dev"))
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 server.use("/public", express.static("public"))
-server.use(main)
-
-server.get('api/product/produk_harga', function(req, res, next) {
-    res.json({msg: 'this is CORS-enable for all origins!'})
-})
+server.use("/api", main)
 
 module.exports = server
