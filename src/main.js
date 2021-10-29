@@ -19,7 +19,7 @@ routing.use("auth", auth)
 routing.use("authcs", cs)
 
 
-server.get('/product', function(req, res, next) {
+routing.get('/product', function(req, res, next) {
     res.json({msg: 'this is CORS-enable for all origins!'})
 })
 
