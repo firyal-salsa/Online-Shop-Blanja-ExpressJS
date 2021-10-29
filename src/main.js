@@ -10,12 +10,17 @@ const cs = require("./routes/authcs")
 const { cloudConfig } = require("./configs/cloudinary")
 
 routing.use("*", cloudConfig)
-routing.use("api/product", product)
-routing.use("api/category", category)
-routing.use("api/bag", bag)
-routing.use("api/customer", customer)
-routing.use("api/seller", seller)
-routing.use("api/auth", auth)
-routing.use("api/authcs", cs)
+routing.use("product", product)
+routing.use("category", category)
+routing.use("bag", bag)
+routing.use("customer", customer)
+routing.use("seller", seller)
+routing.use("auth", auth)
+routing.use("authcs", cs)
+
+
+server.get('/product', function(req, res, next) {
+    res.json({msg: 'this is CORS-enable for all origins!'})
+})
 
 module.exports = routing
