@@ -98,12 +98,8 @@ npm start
 https://documenter.getpostman.com/view/17931318/UV5Ukz8v
 
 ## Demo
-https://olshop-blanja.netlify.app/
+https://app.blanja-shop.online/
 
  ## FrontEnd
 https://github.com/firyal-salsa/Online-Shop-Blanja-ReactJS
 
-## DockerHub
-```
-docker pull firsabila/backend:prod
-```
