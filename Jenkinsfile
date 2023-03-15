@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     stages {
-        stage('nodeJS') {
+        stage('nodeJS16') {
             steps {
                 echo 'Hello World'
             }
