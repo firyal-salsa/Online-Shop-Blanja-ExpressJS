@@ -10,13 +10,17 @@ pipeline {
                 }
             }
         }
-        // stage('Running Test') {
-        //     steps {
-        //         nodejs("nodeJS16") {
-        //             sh 'npm run test'
-        //         }
-        //     }
-        // }
+    }
+
+    stages {
+        stage('Running Test') {
+            steps {
+                nodejs("nodeJS16") {
+                    sh 'npm run test'
+                }
+            }
+        }
+    }
         // stage("Build image") {
         //     when {
         //         expression {
@@ -74,5 +78,4 @@ pipeline {
         //         sh "echo 'success runing'"
         //     }
         // }
-    }
 }
