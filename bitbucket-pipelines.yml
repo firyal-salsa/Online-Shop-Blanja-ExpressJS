@@ -28,4 +28,4 @@ pipelines:
             - source .env
             - docker build --no-cache -t firsabila/blanja-backend-task .
             - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
-            - docker push firsabila/blanja-backend-task
+            # - docker push firsabila/blanja-backend-task
