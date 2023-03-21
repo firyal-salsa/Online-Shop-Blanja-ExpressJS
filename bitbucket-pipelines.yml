@@ -1,24 +1,19 @@
-#  Template NodeJS build
+# Konfigurasi untuk Bitbucket Pipelines
 
-#  This template allows you to validate your NodeJS code.
-#  The workflow allows running tests and code linting on the default branch.
+# Set image Docker yang digunakan untuk menjalankan pipeline
+image: node:14.17.3
 
-image: node:16
-
+# Definisikan skrip untuk menjalankan tes
 pipelines:
-  default:
-    - parallel:
-        - step:
-            name: Build and Test
-            caches:
-              - node
-            script:
-              - npm install
-              - sudo npm test
-        - step:
-            name: Code linting
-            script:
-              - npm install eslint
-              - npx eslint .
-            caches:
-              - node
+  branches:
+    master:
+      - step:
+          name: Install dependencies
+          script:
+            - npm install
+          artifacts:
+            - node_modules/**
+      - step:
+          name: Run tests
+          script:
+            - npm test
