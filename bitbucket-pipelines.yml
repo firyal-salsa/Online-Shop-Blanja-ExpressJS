@@ -1,7 +1,7 @@
 # Konfigurasi untuk Bitbucket Pipelines
 
 # Set image Docker yang digunakan untuk menjalankan pipeline
-image: node:14.17.3
+image: node:14.17.3-alpine
 
 # Definisikan skrip untuk menjalankan tes
 pipelines:
@@ -26,6 +26,6 @@ pipelines:
             - docker
           script:
             - docker build -t b3task-backend-blanja .
-            - docker login -u firsabila -p Illy4sv13l
+            - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             - docker tag b3task-backend-blanja firsabila/b3task-backend-blanja
             - docker push firsabila/b3task-backend-blanja
