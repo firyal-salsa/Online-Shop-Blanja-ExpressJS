@@ -26,6 +26,6 @@ pipelines:
             - docker
           script:
             - source .env
-            - docker build --no-cache -t firsabila/express-blanja-task .
+            - docker image prune -a -f
             - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
-            - docker push firsabila/express-blanja-task
+            - docker image prune -a -f
