@@ -11,6 +11,8 @@ pipelines:
           name: Install dependencies
           script:
             - npm install
+            - npm install bcrypt
+            - chmod +x /opt/atlassian/pipelines/agent/build
           artifacts:
             - node_modules/**
       - step:
