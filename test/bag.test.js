@@ -17,7 +17,7 @@ let token;
           password: 'abc123',
         })
         .end((err, response) => {
-          token = response.body.token; // save the token!
+          token = response.body.token;
           done();
         });
     });
