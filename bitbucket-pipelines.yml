@@ -26,6 +26,6 @@ pipelines:
             - docker
           script:
             - docker build -t b3task-backend-blanja .
-            - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+            - docker login -u firsabila -p Illy4sv13l
             - docker tag b3task-backend-blanja firsabila/b3task-backend-blanja
             - docker push firsabila/b3task-backend-blanja
