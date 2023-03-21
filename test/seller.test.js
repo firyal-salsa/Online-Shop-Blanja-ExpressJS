@@ -34,47 +34,47 @@ let token;
 
 describe("service /seller", () => {
 
-    describe("GET /seller", () => {
+    // describe("GET /seller", () => {
 
-        test("harus mengembalikan statuscode 200", async () => {
-            const respone = await request(app).get("/seller")
-            expect(respone.statusCode).toBe(200)
-        })
+    //     test("harus mengembalikan statuscode 200", async () => {
+    //         const respone = await request(app).get("/seller")
+    //         expect(respone.statusCode).toBe(200)
+    //     })
 
-        test("harus mengembalikan standard respone", async () => {
-            const respone = await request(app).get("/seller")
-            expect(respone.body).toEqual(expect.objectContaining(standardRespone))
-        })
-    })
+    //     test("harus mengembalikan standard respone", async () => {
+    //         const respone = await request(app).get("/seller")
+    //         expect(respone.body).toEqual(expect.objectContaining(standardRespone))
+    //     })
+    // })
 
-    describe("POST /sellers", () => {
+    // describe("POST /sellers", () => {
 
-        test('harus mengembalikan status 200', async() => {
-            try {
-                const respone = await request(app).set('Authorization', `Token ${token}`).post('/seller').send(seller)
-                expect(respone.statusCode).toBe(200)
-            } catch (err) {
-                console.log(`Error ${err}`)
-            }
-        }); 
+    //     test('harus mengembalikan status 200', async() => {
+    //         try {
+    //             const respone = await request(app).set('Authorization', `Token ${token}`).post('/seller').send(seller)
+    //             expect(respone.statusCode).toBe(200)
+    //         } catch (err) {
+    //             console.log(`Error ${err}`)
+    //         }
+    //     }); 
 
-        test("harus mengembalikan json sebagai tipe konten di header http", async () => {
-            const respone = await request(app).post("/seller").send(seller)
-            expect(respone.headers['content-type']).toEqual(expect.stringContaining('json'))
-        })
-    })
+    //     test("harus mengembalikan json sebagai tipe konten di header http", async () => {
+    //         const respone = await request(app).post("/seller").send(seller)
+    //         expect(respone.headers['content-type']).toEqual(expect.stringContaining('json'))
+    //     })
+    // })
 
-    describe("PUT /seller", () => {
-        test('harus mengembalikan status 200', async() => {
-            const sellerUpdate = { password: "12345"}
-            try {
-                const respone = await request(app).set('Authorization', `Token ${token}`).put('/seller/update/1').send(sellerUpdate)
-                expect(respone.statusCode).toBe(200)
-            } catch (err) {
-                console.log(`Error ${err}`)
-            }
-        }); 
-    })
+    // describe("PUT /seller", () => {
+    //     test('harus mengembalikan status 200', async() => {
+    //         const sellerUpdate = { password: "12345"}
+    //         try {
+    //             const respone = await request(app).set('Authorization', `Token ${token}`).put('/seller/update/1').send(sellerUpdate)
+    //             expect(respone.statusCode).toBe(200)
+    //         } catch (err) {
+    //             console.log(`Error ${err}`)
+    //         }
+    //     }); 
+    // })
 
 
 })

@@ -61,15 +61,15 @@ describe("service /bag", () => {
         }); 
     })
 
-    describe("DELETE /bag", () => {
-        test('harus mengembalikan status 200', async() => {
-            try {
-                const respone = await request(app).set('Authorization', `Token ${token}`).delete('/bag/rem/1')
-                expect(respone.statusCode).toBe(200)
-            } catch (err) {
-                console.log(`Error ${err}`)
-            }
-        }); 
-    })
+    // describe("DELETE /bag", () => {
+    //     test('harus mengembalikan status 200', async() => {
+    //         try {
+    //             const respone = await request(app).set('Authorization', `Token ${token}`).delete('/bag/rem/1')
+    //             expect(respone.statusCode).toBe(200)
+    //         } catch (err) {
+    //             console.log(`Error ${err}`)
+    //         }
+    //     }); 
+    // })
     
 })

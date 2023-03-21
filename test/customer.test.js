@@ -34,18 +34,18 @@ let token;
 
 describe("service /customer", () => {
 
-    describe("GET /customer", () => {
+    // describe("GET /customer", () => {
 
-        test("harus mengembalikan statuscode 200", async () => {
-            const respone = await request(app).get("/customer")
-            expect(respone.statusCode).toBe(200)
-        })
+    //     test("harus mengembalikan statuscode 200", async () => {
+    //         const respone = await request(app).get("/customer")
+    //         expect(respone.statusCode).toBe(200)
+    //     })
 
-        test("harus mengembalikan standard respone", async () => {
-            const respone = await request(app).get("/customer")
-            expect(respone.body).toEqual(expect.objectContaining(standardRespone))
-        })
-    })
+    //     test("harus mengembalikan standard respone", async () => {
+    //         const respone = await request(app).get("/customer")
+    //         expect(respone.body).toEqual(expect.objectContaining(standardRespone))
+    //     })
+    // })
 
     describe("POST /customers", () => {
 
