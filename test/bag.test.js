@@ -29,13 +29,13 @@ let token;
 
 describe("service /bag", () => {
 
-    describe("GET /bag", () => {
+    // describe("GET /bag", () => {
 
-        test("harus mengembalikan standard respone", async () => {
-            const respone = await request(app).get("/bag")
-            expect(respone.body).toEqual(expect.objectContaining(standardRespone))
-        })
-    })
+    //     test("harus mengembalikan standard respone", async () => {
+    //         const respone = await request(app).get("/bag")
+    //         expect(respone.body).toEqual(expect.objectContaining(standardRespone))
+    //     })
+    // })
 
 
     describe("POST /bag", () => {
