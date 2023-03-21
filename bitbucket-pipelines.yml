@@ -25,7 +25,8 @@ pipelines:
           services:
             - docker
           script:
+            - export DOCKER_BUILDKIT=0
             - source .env
-            - docker build --no-cache -t firsabila/express-blanja-taskb3 .
             - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
+            - docker build --no-cache -t firsabila/express-blanja-taskb3 .
             - docker push firsabila/express-blanja-taskb3
