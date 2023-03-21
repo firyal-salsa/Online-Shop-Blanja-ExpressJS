@@ -26,6 +26,6 @@ pipelines:
             - docker
           script:
             - source .env
-            - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
             - docker build -t firsabila/blanja-backend-b3task:dev .
+            - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
             - docker push firsabila/blanja-backend-b3task:dev
