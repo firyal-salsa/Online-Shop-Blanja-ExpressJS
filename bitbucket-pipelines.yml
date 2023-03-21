@@ -3,12 +3,6 @@
 # Set image Docker yang digunakan untuk menjalankan pipeline
 image: node:14.17.3-alpine
 
-definitions:
-  services:
-    docker:
-      memory: 2048
-      privileged: true
-
 # Definisikan skrip untuk menjalankan tes
 pipelines:
   branches:
@@ -31,7 +25,7 @@ pipelines:
           services:
             - docker
           script:
-            - docker build --no-cache -t b3nettask-backend-blanja .
+            - docker build --no-cache -t b3assignment-backend-blanja .
             - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             - docker tag b3task-backend-blanja firsabila/b3task-backend-blanja
             - docker push firsabila/b3task-backend-blanja
