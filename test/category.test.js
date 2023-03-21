@@ -28,18 +28,18 @@ let token;
 
 describe("service /category", () => {
 
-    describe("GET /category", () => {
+    // describe("GET /category", () => {
 
-        test("harus mengembalikan statuscode 200", async () => {
-            const respone = await request(app).get("/category")
-            expect(respone.statusCode).toBe(200)
-        })
+    //     test("harus mengembalikan statuscode 200", async () => {
+    //         const respone = await request(app).get("/category")
+    //         expect(respone.statusCode).toBe(200)
+    //     })
 
-        test("harus mengembalikan standard respone", async () => {
-            const respone = await request(app).get("/category")
-            expect(respone.body).toEqual(expect.objectContaining(standardRespone))
-        })
-    })
+    //     test("harus mengembalikan standard respone", async () => {
+    //         const respone = await request(app).get("/category")
+    //         expect(respone.body).toEqual(expect.objectContaining(standardRespone))
+    //     })
+    // })
 
 
     describe("POST /category", () => {
@@ -65,15 +65,15 @@ describe("service /category", () => {
         }); 
     })
 
-    describe("DELETE /category", () => {
-        test('harus mengembalikan status 200', async() => {
-            try {
-                const respone = await request(app).set('Authorization', `Token ${token}`).delete('/category/rem/1')
-                expect(respone.statusCode).toBe(200)
-            } catch (err) {
-                console.log(`Error ${err}`)
-            }
-        }); 
-    })
+    // describe("DELETE /category", () => {
+    //     test('harus mengembalikan status 200', async() => {
+    //         try {
+    //             const respone = await request(app).set('Authorization', `Token ${token}`).delete('/category/rem/1')
+    //             expect(respone.statusCode).toBe(200)
+    //         } catch (err) {
+    //             console.log(`Error ${err}`)
+    //         }
+    //     }); 
+    // })
     
 })

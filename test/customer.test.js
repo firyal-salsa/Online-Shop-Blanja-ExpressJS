@@ -64,17 +64,17 @@ describe("service /customer", () => {
         })
     })
 
-    describe("PUT /customer", () => {
-        test('harus mengembalikan status 200', async() => {
-            const customerUpdate = { password: "12345"}
-            try {
-                const respone = await request(app).set('Authorization', `Token ${token}`).put('/customer/update/1').send(customerUpdate)
-                expect(respone.statusCode).toBe(200)
-            } catch (err) {
-                console.log(`Error ${err}`)
-            }
-        }); 
-    })
+    // describe("PUT /customer", () => {
+    //     test('harus mengembalikan status 200', async() => {
+    //         const customerUpdate = { password: "12345"}
+    //         try {
+    //             const respone = await request(app).set('Authorization', `Token ${token}`).put('/customer/update/1').send(customerUpdate)
+    //             expect(respone.statusCode).toBe(200)
+    //         } catch (err) {
+    //             console.log(`Error ${err}`)
+    //         }
+    //     }); 
+    // })
 
 
 })

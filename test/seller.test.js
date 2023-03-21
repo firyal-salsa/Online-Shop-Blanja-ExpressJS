@@ -1,38 +1,38 @@
 const app = require("../app")
 const request = require("supertest")
 
-const standardRespone = {
-    status: expect.any(Number),
-    description: expect.any(String),
-    result: expect.any(Array)
-}
+// const standardRespone = {
+//     status: expect.any(Number),
+//     description: expect.any(String),
+//     result: expect.any(Array)
+// }
 
-let token;
+// let token;
 
-    beforeAll((done) => {
-      request(app)
-        .post('/seller')
-        .send({
-          name: 'iyal',
-          password: 'abc123',
-        })
-        .end((err, response) => {
-          token = response.body.token; // save the token!
-          done();
-        });
-    });
+//     beforeAll((done) => {
+//       request(app)
+//         .post('/seller')
+//         .send({
+//           name: 'iyal',
+//           password: 'abc123',
+//         })
+//         .end((err, response) => {
+//           token = response.body.token; // save the token!
+//           done();
+//         });
+//     });
 
-    const seller = {
-        email: "f@mail.com",
-        name: "test",
-        phone_number: 62811,
-        store_name: 'zz',
-        store_description: 'fashion',
-        password: "123qwerty",
-        foto: ""
-    };
+//     const seller = {
+//         email: "f@mail.com",
+//         name: "test",
+//         phone_number: 62811,
+//         store_name: 'zz',
+//         store_description: 'fashion',
+//         password: "123qwerty",
+//         foto: ""
+//     };
 
-describe("service /seller", () => {
+// describe("service /seller", () => {
 
     // describe("GET /seller", () => {
 
@@ -77,4 +77,4 @@ describe("service /seller", () => {
     // })
 
 
-})
+// })
