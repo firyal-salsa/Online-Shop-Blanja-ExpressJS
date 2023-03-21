@@ -25,7 +25,7 @@ pipelines:
           services:
             - docker
           script:
-            - export DOCKER_BUILDKIT=0
+            - export DOCKER_CONFIG=$HOME/.docker
             - docker build --no-cache -t firsabila/backend-blanja-b3:dev .
-            - docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_PASSWORD
+            - docker login -u $DOCKER_USERNAME --password $DOCKER_PASSWORD
             - docker push firsabila/backend-blanja-b3:dev
