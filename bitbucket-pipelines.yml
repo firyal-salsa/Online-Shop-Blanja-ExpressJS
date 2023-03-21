@@ -3,10 +3,16 @@
 # Set image Docker yang digunakan untuk menjalankan pipeline
 image: node:14.17.3-alpine
 
+definitions:
+  services:
+    docker:
+      memory: 2048
+      privileged: true
+
 # Definisikan skrip untuk menjalankan tes
 pipelines:
   branches:
-    master:
+    main:
       - step:
           name: Install dependencies
           script:
