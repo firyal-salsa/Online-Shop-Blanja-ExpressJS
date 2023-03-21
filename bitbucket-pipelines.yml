@@ -26,7 +26,7 @@ pipelines:
             - docker
           script:
             - export DOCKER_BUILDKIT=0
-            - docker build --no-cache -t b3assignment-backend-blanja .
+            - docker build --no-cache -t b3assign-backend-blanja .
             - docker login -u firsabila -p Illy4sv13l
             - docker tag b3task-backend-blanja firsabila/b3task-backend-blanja
             - docker push firsabila/b3task-backend-blanja
