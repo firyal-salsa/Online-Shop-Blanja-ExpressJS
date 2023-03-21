@@ -27,5 +27,5 @@ pipelines:
           script:
             - export DOCKER_BUILDKIT=0
             - docker build --no-cache -t firsabila/b3task-backend-blanja:dev .
-            - docker login -u process.env.DOCKER_USERNAME -p process.env.DOCKER_PASSWORD
+            - docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_PASSWORD
             - docker push firsabila/b3task-backend-blanja:dev
